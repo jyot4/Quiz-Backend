@@ -2,12 +2,16 @@ import mongoose from "mongoose";
 
 
 const scheme = new mongoose.Schema({
-paragraph:{
+question:{
   type: String  
 },
-button:{
-    type:String
+option:{
+    type:Array
+},
+answer:{
+  type:String
 }
+
 
 })
 
