@@ -24,11 +24,36 @@ app.get('/quiz', async(req,res)=>{
     const datas = await model.find()
 
     res.status(200).send(datas)
+
+
     // await saved.save()
+
+
+  async  function checkAnswer (questionsId, userSelectedAnswer){
+const  ques = await model.findById(questionsId)
+if(!ques){
+    return "question not found"
+}
+console.log(ques)
+
+
+//compare the user selected answer  with the correct answer
+
+const correctAnswer = ques.answer
+
+// consolelog(correctAnswer)
+    }
 })
 
-// app.get('/name', async (req, res) => {
-//     res.status(200).send("priya")
+//..........................check correct answer....................
+
+
+//get a single quiz
+
+// app.get('/quiz/:id',async(req,res)=>{
+//     const singleQuiz = await model.findById(req.params.id);
+//     res.send(singleQuiz)
+// console.log(singleQuiz)
 // })
 
 connect.then(() => {
