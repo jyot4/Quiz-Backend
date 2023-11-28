@@ -29,20 +29,7 @@ app.get('/quiz', async(req,res)=>{
     // await saved.save()
 
 
-  async  function checkAnswer (questionsId, userSelectedAnswer){
-const  ques = await model.findById(questionsId)
-if(!ques){
-    return "question not found"
-}
-console.log(ques)
-
-
-//compare the user selected answer  with the correct answer
-
-const correctAnswer = ques.answer
-
-// consolelog(correctAnswer)
-    }
+ 
 })
 
 //..........................check correct answer....................
